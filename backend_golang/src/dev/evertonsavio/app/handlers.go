@@ -14,11 +14,11 @@ type AppStatus struct {
 	Version     string `json:"version"`
 }
 
-func Status(c *gin.Context) {
+func (app *application) Status(c *gin.Context) {
 
 	currentStatus := AppStatus{
 		Status:      "Available",
-		Environment: config.env,
+		Environment: app.config.env,
 		Version:     version,
 	}
 

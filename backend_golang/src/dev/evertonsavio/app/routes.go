@@ -15,9 +15,9 @@ func init() {
 	router = gin.Default()
 }
 
-func StartApp() {
+func (app *application) StartApp() {
 
-	router.GET("/status", Status)
+	router.GET("/status", app.Status)
 
 	if err := router.Run(":4000"); err != nil {
 		panic(err)
