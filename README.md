@@ -10,5 +10,6 @@ Go: Install/Update Tools
 * Let's Go
 ```
 go mod init rhavyx/go-watch
-go run .
+go mod tidy
+go run . | go run src/dev/evertonsavio/app/main.go
 ```
