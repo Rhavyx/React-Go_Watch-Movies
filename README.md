@@ -18,5 +18,6 @@ go run . | go run src/dev/evertonsavio/app/main.go
 ```
 docker exec -it <DOCKER_ID> bash
 psql -U <DB_USER_NAME>
+psql -d <DB_NAME> -f go_movies.sql
 \connect <DB_NAME>
 ```
