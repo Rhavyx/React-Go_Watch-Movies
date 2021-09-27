@@ -9,6 +9,7 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
+	"github.com/rhavyx/react_go_watch-movies/backend_golang/src/models"
 )
 
 func main() {
@@ -31,6 +32,7 @@ func main() {
 	app := &application{
 		config: cfg,
 		logger: logger,
+		models: models.NewModels(db),
 	}
 
 	app.startApp()
