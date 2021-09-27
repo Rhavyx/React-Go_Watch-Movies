@@ -5,10 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/rhavyx/react_go_watch-movies/backend_golang/src/models"
 )
 
 func (app *application) getOneMovie(c *gin.Context) {
@@ -22,7 +20,9 @@ func (app *application) getOneMovie(c *gin.Context) {
 		return
 	}
 
-	movie := models.Movie{
+	movie, err := app.models.DB.Get(_id)
+
+	/* 	movie := models.Movie{
 		ID:          _id,
 		Title:       "Some title",
 		Description: "Some description",
@@ -32,7 +32,7 @@ func (app *application) getOneMovie(c *gin.Context) {
 		MPAARating:  "PG-13",
 		CreatedAt:   time.Now(),
 		UpdatedAt:   time.Now(),
-	}
+	} */
 
 	c.JSON(http.StatusOK, movie)
 
