@@ -6,17 +6,6 @@ import (
 	"os"
 )
 
-type configuration struct {
-	port    int
-	env     string
-	version string
-}
-
-type application struct {
-	config configuration
-	logger *log.Logger
-}
-
 func main() {
 
 	var cfg configuration
@@ -32,5 +21,5 @@ func main() {
 		logger: logger,
 	}
 
-	app.StartApp()
+	app.startApp()
 }

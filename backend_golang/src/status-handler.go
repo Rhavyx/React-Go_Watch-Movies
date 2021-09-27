@@ -12,7 +12,7 @@ type AppStatus struct {
 	Version     string `json:"version"`
 }
 
-func (app *application) StatusHandler(c *gin.Context) {
+func (app *application) statusHandler(c *gin.Context) {
 
 	currentStatus := AppStatus{
 		Status:      "Available",
