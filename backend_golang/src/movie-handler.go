@@ -40,4 +40,12 @@ func (app *application) getOneMovie(c *gin.Context) {
 
 func (app *application) getAllMovies(c *gin.Context) {
 
+	movies, err := app.models.DB.All()
+	if err != nil {
+		app.logger.Print(errors.New("some error on find all"))
+		app.errorJson(c, err)
+		return
+	}
+
+	c.JSON(http.StatusOK, movies)
 }
