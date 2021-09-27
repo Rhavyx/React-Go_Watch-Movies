@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -16,7 +17,9 @@ func (app *application) getOneMovie(c *gin.Context) {
 
 	_id, err := strconv.Atoi(movie_id)
 	if err != nil {
-		panic("Error")
+		app.logger.Print(errors.New("invalid id parameter"))
+		app.errorJson(c, err)
+		return
 	}
 
 	movie := models.Movie{
