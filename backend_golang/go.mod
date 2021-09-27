@@ -1,4 +1,4 @@
-module rhavyx/go-watch
+module github.com/rhavyx/react_go_watch-movies/backend_golang
 
 go 1.17
 
