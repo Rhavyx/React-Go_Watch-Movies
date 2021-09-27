@@ -17,7 +17,7 @@ func init() {
 
 func (app *application) StartApp() {
 
-	router.GET("/status", app.Status)
+	router.GET("/status", app.StatusHandler)
 
 	if err := router.Run(":4000"); err != nil {
 		panic(err)
